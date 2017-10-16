@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<h2 class="blog-title">{{post.title}}</h2>
+<p class="blog-post-meta">{{post.created_time}}&nbsp&nbsp分类.<a href="{% url 'blog:get_category' post.category.pk %}">{{post.category}}</a></p>
+{{post.body|safe}}
+{% endblock main %}
+
+{% block box %}
+<div style="height:50px"></div>
+{% endblock box %}
+
